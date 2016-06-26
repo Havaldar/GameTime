@@ -26,8 +26,8 @@ app.controller('myCtrl', function($scope, $interval, $sce) {
 			first_name : 'Abhinav',
 			last_name : 'Havaldar'
 		},
-		speed : 5,
-		max_speed: 10
+		speed : 1,
+		max_speed: 5
 	};
 	$scope.keyState = {};
 	$scope.keyDown = function($event) {
@@ -47,5 +47,5 @@ app.controller('myCtrl', function($scope, $interval, $sce) {
 		if ($scope.keyState[40]) $scope.player.position.y+=$scope.player.speed;
 	};
 	$interval($scope.move,1);
-	$scope.reset_speed = function() {$scope.player.speed = 5};
+	$scope.reset_speed = function() {$scope.player.speed = 1};
 });
