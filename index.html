@@ -10,11 +10,12 @@
 		<svg id="canvas">
 			<text 	x="{{player.position.x}}" 
 					y="{{player.position.y}}"
-					fill="black" 
-					ng-bind-html="trust(player.repr)"
-			></text>
-			<text x="100" y="100">{{player.position.x}}</text>
-			<text x="150" y="150">{{player.position.y}}</text>
+					fill="black">
+				<tspan dy='1.5em' x='{{player.position.x}}'>&nbsp&nbsp//&nbsp&nbsp\\</tspan>
+				<tspan dy='1.5em' x='{{player.position.x}}'>&nbsp_\\()//_</tspan>
+				<tspan dy='1.5em' x='{{player.position.x}}'>/&nbsp//&nbsp&nbsp\\&nbsp\</tspan>
+				<tspan dy='1.5em' x='{{player.position.x}}'>&nbsp|&nbsp\__/&nbsp|</tspan>
+			</text>
 		</svg>
 	</body>
 </html>
