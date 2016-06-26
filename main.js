@@ -4,9 +4,9 @@ app.controller('myCtrl', function($scope, $sce) {
 	$scope.player = {
 		repr : "<tspan dx='0' dy='1.4em'>&nbsp&nbsp//&nbsp&nbsp\\\\</tspan><tspan dx='0' dy='1.4em'>&nbsp_\\\\()//_</tspan><tspan dx='0' dy='1.4em'>/&nbsp//&nbsp&nbsp\\\\&nbsp\\</tspan><tspan dx='0' dy='1.4em'>&nbsp|&nbsp\\__/&nbsp|</tspan>",
 		facing: {
-			left : true,
+			left : false,
 			right : false,
-			up : false,
+			up : true,
 			down : false
 		},
 		position : {
@@ -25,13 +25,18 @@ app.controller('myCtrl', function($scope, $sce) {
 		name : {
 			first_name : 'Abhinav',
 			last_name : 'Havaldar'
-		}
+		},
+		speed : 5,
+		max_speed: 20
 	};
 	$scope.move = function($event) {
 		var keycode = $event.which || $event.keyCode;
-		if (keycode === 37) $scope.player.position.x-=8;
-		else if (keycode === 38) $scope.player.position.y-=8;
-		else if (keycode === 39) $scope.player.position.x+=8;
-		else $scope.player.position.y+=8;
+		$scope.player.speed = $scope.player.speed < $scope.player.max_speed ? $scope.player.speed + 1 : $scope.player.max_speed;
+		console.log($scope.player.speed);
+		if (keycode === 37) $scope.player.position.x-=$scope.player.speed;
+		else if (keycode === 38) $scope.player.position.y-=$scope.player.speed;
+		else if (keycode === 39) $scope.player.position.x+=$scope.player.speed;
+		else $scope.player.position.y+=$scope.player.speed;
 	};
+	$scope.reset_speed = function() {$scope.player.speed = 5};
 });

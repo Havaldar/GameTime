@@ -6,17 +6,25 @@
 		<link rel="stylesheet" type="text/css" href="/layout.css">
 	</head>
 	<body ng-app='myApp' ng-controller='myCtrl'>
-		<input ng-keydown="move($event)">	
+		<input ng-keydown="move($event)" ng-keyup="reset_speed()" id="cmd" class="hidden">	
 		<svg id="canvas">
 			<text 	x="{{player.position.x}}" 
 					y="{{player.position.y}}"
 					fill="black">
-				<tspan dy='1.5em' x='{{player.position.x}}'>&nbsp&nbsp//&nbsp&nbsp\\</tspan>
-				<tspan dy='1.5em' x='{{player.position.x}}'>&nbsp_\\()//_</tspan>
-				<tspan dy='1.5em' x='{{player.position.x}}'>/&nbsp//&nbsp&nbsp\\&nbsp\</tspan>
-				<tspan dy='1.5em' x='{{player.position.x}}'>&nbsp|&nbsp\__/&nbsp|</tspan>
+				<tspan dy='1.2em' x='{{player.position.x}}'>&nbsp&nbsp//&nbsp&nbsp\\</tspan>
+				<tspan dy='1.2em' x='{{player.position.x}}'>&nbsp_\\()//_</tspan>
+				<tspan dy='1.2em' x='{{player.position.x}}'>/&nbsp//&nbsp&nbsp\\&nbsp\</tspan>
+				<tspan dy='1.2em' x='{{player.position.x}}'>&nbsp|&nbsp\__/&nbsp|</tspan>
 			</text>
 		</svg>
 	</body>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(event) {
+			document.getElementById('cmd').focus();
+		});
+		document.getElementsByTagName('body')[0].addEventListener("click", function(event){
+			document.getElementById('cmd').focus();
+		});
+	</script>
 </html>
 

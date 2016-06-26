@@ -10,3 +10,17 @@ html, body { width:100%; height:100%; } /* just to be sure these are full screen
 	display:block;
     background: #eee;
 }
+
+#faceup {
+	-ms-transform: rotate(deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
+.hidden {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
