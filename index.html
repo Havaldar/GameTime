@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type="text/javascript" src="/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="/layout.css">
+	</head>
+	<body ng-app='myApp' ng-controller='myCtrl'>
+		<input ng-keydown="move($event)">	
+		<svg id="canvas">
+			<text 	x="{{player.position.x}}" 
+					y="{{player.position.y}}"
+					fill="black" 
+					ng-bind-html="trust(player.repr)"
+			></text>
+			<text x="100" y="100">{{player.position.x}}</text>
+			<text x="150" y="150">{{player.position.y}}</text>
+		</svg>
+	</body>
+</html>
+
