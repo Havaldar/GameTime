@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="/layout.css">
 	</head>
 	<body ng-app='myApp' ng-controller='myCtrl'>
+        {{map_repr}}
 		<input ng-keydown="keyDown($event)" ng-keyup="keyUp($event);reset_speed()" id="cmd" class="hidden">	
 		<svg id="canvas">
 			<text 	x="{{player.position.x}}" 
